@@ -28,7 +28,7 @@ window.onload = () => {
 
   grab('button').addEventListener('click', (event) => {
     event.preventDefault();
-    const celsiusValue = Module.ccall(
+    const celsiusValue = ccall(
       'fahrToCels',
       'number',
       ['number'],
