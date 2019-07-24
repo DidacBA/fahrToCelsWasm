@@ -1,4 +1,4 @@
-var Module = require('./fahrToCels');
+import { ccall } from './fahrToCels';
 
 window.onload = () => {
   grab('body').append(element({
@@ -30,7 +30,7 @@ window.onload = () => {
 
   grab('button').addEventListener('click', (event) => {
     event.preventDefault();
-    const celsiusValue = Module.ccall(
+    const celsiusValue = ccall(
       'fahrToCels',
       'number',
       ['number'],
