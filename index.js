@@ -25,4 +25,11 @@ window.onload = () => {
       }
     ]
   }));
+
+  grab('button').addEventListener('click', (event) => {
+    event.preventDefault();
+    const celsiusValue = _fahrToCels(grab('fahr-input').value);
+
+    console.log(celsiusValue);
+  });
 }
