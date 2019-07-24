@@ -1,4 +1,4 @@
-(() => {
+window.onload = () => {
   grab('body').append(element({
     tagName: 'form',
     attributes: {
@@ -25,4 +25,4 @@
       }
     ]
   }));
-})()
+}
