@@ -1,4 +1,4 @@
-function element(nodeElement) {
+export function element(nodeElement) {
   const {
     tagName,
     attributes,
@@ -28,15 +28,15 @@ function element(nodeElement) {
   return el;
 }
 
-function grab(id) {
+export function grab(id) {
   return document.getElementById(id);
 }
 
-function insertAfter(newNode, referenceNode) {
+export function insertAfter(newNode, referenceNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
 
-function DOMScrubber(idsToScrub) {
+export function DOMScrubber(idsToScrub) {
   idsToScrub.map((id) => {
     grab(id) ? grab(id).remove() : null
   });

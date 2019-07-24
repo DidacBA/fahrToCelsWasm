@@ -1,4 +1,20 @@
-import { ccall } from './fahrToCels';
+import {grab, element, DOMScrubber} from '../utils/DOM/DOM';
+import fahrToCels from '../utils/wasm/fahrToCels.js';
+import fahrToCelsModule from './utils/wasm/fahrToCels.wasm';
+
+const module = fahrToCels({
+  locateFile(path) {
+    if(path.endsWith('.wasm')) {
+      return fahrToCellsModule;
+    }
+    return path;
+  }
+});
+
+
+module.onRuntimeInitialized = () => {
+  console.log(module._fahrToCels(90));
+};
 
 window.onload = () => {
   grab('body').append(element({
@@ -30,12 +46,7 @@ window.onload = () => {
 
   grab('button').addEventListener('click', (event) => {
     event.preventDefault();
-    const celsiusValue = ccall(
-      'fahrToCels',
-      'number',
-      ['number'],
-      [grab('fahr-input').value]
-    )
+    const celsiusValue = module.fahrToCels(90);
 
     console.log(celsiusValue);
   });

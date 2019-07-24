@@ -1,10 +1,7 @@
 #include <stdio.h>
+#include <emscripten.h>
 
-int main (int argc, char ** argv)
-{
-  printf("Web Assembly!\n");
-}
-
+EMSCRIPTEN_KEEPALIVE
 int fahrToCels(int fahr)
 {
   return 5 * (fahr - 32) / 9;
