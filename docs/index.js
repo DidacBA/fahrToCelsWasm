@@ -8,7 +8,11 @@ fetch('./out/main.wasm').then(response =>
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-  })
+  });
+
+  form.addEventListener('click', () => {
+    useInput();
+  });
 
   input.oninput = useInput;
 
@@ -17,9 +21,9 @@ fetch('./out/main.wasm').then(response =>
     const radioValue = getRadioVal(form, 'temp');
 
     if (radioValue === 'fahrenheit' && inputValue !== '' && inputValue.match(/^[0-9]/)) {
-      document.getElementById("result-container").textContent = instance.exports.fahrToCels(inputValue);
+      document.getElementById("result-container").textContent = instance.exports.fahrToCels(inputValue) + ' °C';
     } else if (radioValue === 'celsius' && inputValue !== '' && inputValue.match(/^[0-9]/)) {
-      document.getElementById("result-container").textContent = instance.exports.celsToFahr(inputValue);
+      document.getElementById("result-container").textContent = instance.exports.celsToFahr(inputValue) + ' °F';
     } else if (input.value === '') {
       document.getElementById("result-container").textContent = '';
     } else {
