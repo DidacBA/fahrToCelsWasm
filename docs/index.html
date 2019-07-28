@@ -8,13 +8,17 @@
   <div class="wrapper">
     <form id="temp-form">
       <div class="wrapper-radio">
-        <div>
-          <input type="radio" id="fahrenheit-radio" name="temp" value="fahrenheit" checked>
-          <label for="fahrenheit">Fahrenheit</label>
+        <div class="ind-radio">
+          <label class="switch">Fahrenheit
+            <input type="radio" id="fahrenheit-radio" name="temp" value="fahrenheit" checked>
+            <span class="slider round"></span>
+          </label>
         </div>
-        <div>
-          <input type="radio" id="celsius-radio" name="temp" value="celsius">
-          <label for="celsius">Celsius</label>
+        <div class="ind-radio">
+          <label class="switch">Celsius
+            <input type="radio" id="celsius-radio" name="temp" value="celsius">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
     </form>

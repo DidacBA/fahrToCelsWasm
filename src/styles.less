@@ -1,3 +1,5 @@
+@font-color: #F8F8FF;
+
 html {
   box-sizing: border-box;
   height: 100vh;
@@ -8,6 +10,7 @@ html {
 }
 
 body {
+  color: @font-color;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -16,11 +19,12 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background: rgb(188,152,106);
-  background: -moz-linear-gradient(210deg, rgba(188,152,106,1) 0%, rgba(251,238,193,1) 92%);
-  background: -webkit-linear-gradient(210deg, rgba(188,152,106,1) 0%, rgba(251,238,193,1) 92%);
-  background: linear-gradient(210deg, rgba(188,152,106,1) 0%, rgba(251,238,193,1) 92%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bc986a",endColorstr="#fbeec1",GradientType=1);
+  background: rgb(101,157,189);
+  background: -moz-linear-gradient(180deg, rgba(101,157,189,1) 39%, rgba(218,173,134,1) 78%, rgba(251,238,193,1) 96%);
+  background: -webkit-linear-gradient(180deg, rgba(101,157,189,1) 39%, rgba(218,173,134,1) 78%, rgba(251,238,193,1) 96%);
+  background: linear-gradient(180deg, rgba(101,157,189,1) 39%, rgba(218,173,134,1) 78%, rgba(251,238,193,1) 96%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#659dbd",endColorstr="#fbeec1",GradientType=1);
+  font: 400 16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 h1 {
@@ -29,7 +33,7 @@ h1 {
 
 .wrapper-radio {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 }
@@ -39,15 +43,88 @@ h1 {
   text-align: center;
   background: transparent;
   border: none;
+  margin-top: 20px;
 }
 
 #temp-input:focus {
   outline: none !important;
-  caret-color: red;
-
+  caret-color: @font-color;
+  color: @font-color;
 }
 
 #result-container {
   height: 50px;
   font-size: 50px;
+}
+
+.ind-radio {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+label {
+  
+}
+
+/* Switch styles */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  transform: translateX(100px)
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
