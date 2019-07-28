@@ -11,8 +11,22 @@ fetch('./out/main.wasm').then(response =>
   });
 
   form.addEventListener('click', () => {
+    if (getRadioVal(form, 'temp') === 'fahrenheit') {
+      document.getElementById('temp-symbol').textContent = '°F';
+    } else {
+      document.getElementById('temp-symbol').textContent = '°C';
+    }
     useInput();
   });
+
+  // Resize input to content
+
+  input.addEventListener('input', resizeInput);
+  resizeInput.call(input);
+
+  function resizeInput() {
+    this.style.width = this.value.length + 0.1 + "ch";
+  }
 
   input.oninput = useInput;
 
@@ -51,4 +65,12 @@ function getRadioVal(form, name) {
 
 function inputFocus() {
   document.getElementById("temp-input").focus();
+}
+
+window.onload = () => {
+  if (getRadioVal(document.getElementById('temp-form'), 'temp') === 'fahrenheit') {
+    document.getElementById('temp-symbol').textContent = '°F';
+  } else {
+    document.getElementById('temp-symbol').textContent = '°C';
+  }
 }

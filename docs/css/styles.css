@@ -54,6 +54,9 @@ h1 {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+#temp-symbol {
+  font-size: 50px;
+}
 /* Switch styles */
 .switch {
   position: relative;
