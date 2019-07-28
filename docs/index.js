@@ -16,12 +16,18 @@ fetch('./out/main.wasm').then(response =>
     const inputValue = input.value;
     const radioValue = getRadioVal(form, 'temp');
 
-    if (radioValue === 'fahrenheit' && inputValue !== '') {
-      document.getElementById("container").textContent = instance.exports.fahrToCels(inputValue);
-    } else if (radioValue === 'celsius' && inputValue !== '') {
-      document.getElementById("container").textContent = instance.exports.celsToFahr(inputValue);
+    if (radioValue === 'fahrenheit' && inputValue !== '' && inputValue.match(/^[0-9]/)) {
+      document.getElementById("result-container").textContent = instance.exports.fahrToCels(inputValue);
+    } else if (radioValue === 'celsius' && inputValue !== '' && inputValue.match(/^[0-9]/)) {
+      document.getElementById("result-container").textContent = instance.exports.celsToFahr(inputValue);
+    } else if (input.value === '') {
+      document.getElementById("result-container").textContent = '';
     } else {
-      document.getElementById("container").textContent = '';
+      input.value = '';
+      document.getElementById("result-container").textContent = 'Input a valid number';
+      setTimeout(() => {
+        document.getElementById("result-container").textContent = '';
+      } , 3000);
     }
   }
 
@@ -37,4 +43,8 @@ function getRadioVal(form, name) {
     }
   }
   return val;
+}
+
+function inputFocus() {
+  document.getElementById("temp-input").focus();
 }

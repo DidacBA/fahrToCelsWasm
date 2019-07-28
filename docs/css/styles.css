@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
 }
 *,
 *:before,
@@ -9,7 +11,38 @@ html {
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: #bc986a;
+  background: -moz-linear-gradient(210deg, #bc986a 0%, #fbeec1 92%);
+  background: -webkit-linear-gradient(210deg, #bc986a 0%, #fbeec1 92%);
+  background: linear-gradient(210deg, #bc986a 0%, #fbeec1 92%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bc986a", endColorstr="#fbeec1", GradientType=1);
 }
-body {
-  background-color: white;
+h1 {
+  font-size: 4rem;
+}
+.wrapper-radio {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+#temp-input {
+  font-size: 50px;
+  text-align: center;
+  background: transparent;
+  border: none;
+}
+#temp-input:focus {
+  outline: none !important;
+  caret-color: red;
+}
+#result-container {
+  height: 50px;
+  font-size: 50px;
 }
