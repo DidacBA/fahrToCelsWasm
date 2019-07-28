@@ -3,11 +3,13 @@
   "description": "",
   "version": "1.0.0",
   "scripts": {
-    "build": "gulp --gulpfile ./build.ts"
+    "build": "gulp --gulpfile ./build.ts",
   },
   "devDependencies": {
     "@wasm/studio-utils": "*",
+    "browser-sync": "^2.26.7",
     "gulp": "~3.9.1",
+    "gulp-less": "^4.0.1",
     "ts-node": "~5.0.0",
     "typescript": "~2.7.2"
   },
