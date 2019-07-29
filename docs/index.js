@@ -25,7 +25,7 @@ fetch('./out/main.wasm').then(response =>
   resizeInput.call(input);
 
   function resizeInput() {
-    this.style.width = this.value.length + 0.1 + "ch";
+    this.style.width = this.value.length + 0.5 + "ch";
   }
 
   input.oninput = useInput;
