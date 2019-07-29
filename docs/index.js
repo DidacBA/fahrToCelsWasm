@@ -34,11 +34,11 @@ fetch('./out/main.wasm').then(response =>
     const inputValue = input.value;
     const radioValue = getRadioVal(form, 'temp');
 
-    const testExp = new RegExp('^[+-]?([0-9]{0,})*[.]?([0-9]{0,2})?$', 'g');
+    const testExp = new RegExp('^[-]?([0-9]{0,})*$', 'g');
 
     if (input.value === '-') {
-      document.getElementById("result-container").textContent = 'Write some numbers!';
-    } else if (radioValue === 'fahrenheit' && inputValue !== '' && inputValue.match(testExp) && input.value !== '-') {
+      document.getElementById("result-container").textContent = 'Write some numbers too!';
+    } else if (radioValue === 'fahrenheit' && inputValue !== '' && inputValue.match(testExp)) {
       document.getElementById("result-container").textContent = instance.exports.fahrToCels(inputValue) + ' °C';
     } else if (radioValue === 'celsius' && inputValue !== '' && inputValue.match(testExp)) {
       document.getElementById("result-container").textContent = instance.exports.celsToFahr(inputValue) + ' °F';
