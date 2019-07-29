@@ -34,15 +34,19 @@ fetch('./out/main.wasm').then(response =>
     const inputValue = input.value;
     const radioValue = getRadioVal(form, 'temp');
 
-    if (radioValue === 'fahrenheit' && inputValue !== '' && inputValue.match(/^[0-9]/)) {
+    const testExp = new RegExp('^[+-]?([0-9]{0,})*[.]?([0-9]{0,2})?$', 'g');
+
+    if (input.value === '-') {
+      document.getElementById("result-container").textContent = 'Write some numbers!';
+    } else if (radioValue === 'fahrenheit' && inputValue !== '' && inputValue.match(testExp) && input.value !== '-') {
       document.getElementById("result-container").textContent = instance.exports.fahrToCels(inputValue) + ' °C';
-    } else if (radioValue === 'celsius' && inputValue !== '' && inputValue.match(/^[0-9]/)) {
+    } else if (radioValue === 'celsius' && inputValue !== '' && inputValue.match(testExp)) {
       document.getElementById("result-container").textContent = instance.exports.celsToFahr(inputValue) + ' °F';
     } else if (input.value === '') {
       document.getElementById("result-container").textContent = '';
     } else {
       input.value = '';
-      document.getElementById("result-container").textContent = 'Input a valid number';
+      document.getElementById("result-container").textContent = 'Try some numbers, idiot';
       setTimeout(() => {
         document.getElementById("result-container").textContent = '';
       } , 3000);
