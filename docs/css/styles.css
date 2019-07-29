@@ -46,6 +46,11 @@ h1 {
     text-align: right;
   }
 }
+@media screen and (max-width: 600px) {
+  #input-container {
+    transform: translateX(-4ch);
+  }
+}
 #temp-input:focus {
   outline: none !important;
   caret-color: #F8F8FF;
