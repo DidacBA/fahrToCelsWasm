@@ -28,7 +28,7 @@ fetch('./out/main.wasm').then(response =>
     if (mobilecheck() === false) {
       this.style.width = this.value.length + 0.1 + "ch";
     } else {
-      this.style.width = this.value.length + 0.5 + "ch";
+      this.style.width = this.value.length + 1 + "ch";
       this.style.maxWidth = "4ch";
     }
   }
