@@ -29,7 +29,7 @@ fetch('./out/main.wasm').then(response =>
       this.style.width = this.value.length + 0.1 + "ch";
     } else {
       this.style.minWidth = "4ch";
-      this.style.width = this.value.length + 0.1 + "ch";
+      this.style.width = "4ch";
     }
   }
 
@@ -52,8 +52,10 @@ fetch('./out/main.wasm').then(response =>
     } else {
       input.value = '';
       document.getElementById("result-container").textContent = 'Try some numbers, idiot';
-      setTimeout(() => {
-        document.getElementById("result-container").textContent = '';
+      clearInterval = setTimeout(() => {
+        if (input.value === '') {
+          document.getElementById("result-container").textContent = '';
+        }
       } , 3000);
     }
   }
