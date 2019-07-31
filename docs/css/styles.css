@@ -19,9 +19,10 @@ body {
   justify-content: center;
   text-align: center;
   background: #659dbd;
-  background: -moz-linear-gradient(180deg, #659dbd 39%, #daad86 78%, #fbeec1 96%);
-  background: -webkit-linear-gradient(180deg, #659dbd 39%, #daad86 78%, #fbeec1 96%);
-  background: linear-gradient(180deg, #659dbd 39%, #daad86 78%, #fbeec1 96%);
+  background: -moz-linear-gradient(180deg, #659dbd 39%, #daad86 78%, #fbeec1 96%), -moz-linear-gradient(180deg, #766ef7 0%, #790926 92%);
+  background: -webkit-linear-gradient(180deg, #659dbd 39%, #daad86 78%, #fbeec1 96%), -webkit-linear-gradient(180deg, #766ef7 0%, #790926 92%);
+  background: linear-gradient(180deg, #659dbd 39%, #daad86 78%, #fbeec1 96%), linear-gradient(180deg, #766ef7 0%, #790926 92%);
+  background-blend-mode: screen;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#659dbd", endColorstr="#fbeec1", GradientType=1);
   font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
