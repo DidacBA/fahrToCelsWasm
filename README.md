@@ -1,3 +1,3 @@
 # Temperature converter website using webassembly
 
-https://didacbigorda.com/fahrToCelsWasm/
+https://didacba.github.io/fahrToCelsWasm/
